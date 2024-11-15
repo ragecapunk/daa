@@ -1,0 +1,19 @@
+@startuml
+start
+:Pengguna Mencari Kendaraan;
+if (Kendaraan Ditemukan?) then (Ya)
+    :Pengguna Melihat Detail Kendaraan;
+    :Pengguna Memesan Kendaraan;
+    :Permintaan Dikirim ke Admin;
+    if (Admin Menyetujui?) then (Ya)
+        :Status Kendaraan = Dipinjam;
+        :Pengguna Meminjam Kendaraan;
+    else (Tidak)
+        :Permintaan Ditolak;
+    endif
+else (Tidak)
+    :Pengguna Tidak Menemukan Kendaraan yang Diinginkan;
+endif
+stop
+@enduml
+c:\Users\ASUS\OneDrive\Documents\tugas semester 3\PBO\Racangan db.jpg
