@@ -1,0 +1,26 @@
+@startuml
+
+' === Use Case Diagram ===
+title Use Case Diagram Ipeng Sport
+
+actor Pelanggan
+actor Admin
+
+rectangle "Ipeng Sport" {
+  Pelanggan -- (Cari Produk)
+  Pelanggan -- (Beli Produk)
+  Pelanggan -- (Lacak Pesanan)
+  Pelanggan -- (Lihat Laporan)
+
+  Admin -- (Kelola Produk)
+  Admin -- (Kelola Transaksi)
+  Admin -- (Kelola Inventaris)
+  Admin -- (Generate Laporan)
+
+  (Cari Produk) --> (Kelola Produk)
+  (Beli Produk) --> (Kelola Transaksi)
+  (Lacak Pesanan) --> (Kelola Inventaris)
+  (Lihat Laporan) --> (Generate Laporan)
+}
+
+@enduml

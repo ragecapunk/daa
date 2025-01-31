@@ -1,0 +1,26 @@
+@startuml
+
+' === Flowchart ===
+title Flowchart Ipeng Sport
+start
+:Pelanggan Masuk;
+if (Sudah punya akun?) then (Ya)
+  :Login;
+else (Tidak)
+  :Register;
+endif
+:Dashboard;
+:Menu Utama;
+if (Pilih Menu?) then (Catat Transaksi)
+  :Input Transaksi;
+  :Update Saldo;
+elseif (Lihat Laporan)
+  :Tampilkan Laporan;
+elseif (Kelola Budget)
+  :Atur Budget;
+  :Notifikasi Budget;
+endif
+:Logout;
+stop
+
+@enduml

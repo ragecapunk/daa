@@ -1,0 +1,24 @@
+@startuml
+actor Admin
+actor Pengguna
+
+rectangle "Sistem Simpan Pinjam Kendaraan" {
+    usecase "Menambah Kendaraan" as UC1
+    usecase "Memperbarui Status Kendaraan" as UC2
+    usecase "Menghapus Data Kendaraan" as UC3
+    usecase "Mencari Kendaraan" as UC4
+    usecase "Melihat Detail Kendaraan" as UC5
+    usecase "Meminjam Kendaraan" as UC6
+    usecase "Persetujuan Peminjaman" as UC7
+    
+    Admin --> UC1
+    Admin --> UC2
+    Admin --> UC3
+    Admin --> UC7
+    
+    Pengguna --> UC4
+    Pengguna --> UC5
+    Pengguna --> UC6
+    UC6 --> UC7 : "Butuh Persetujuan"
+}
+@enduml

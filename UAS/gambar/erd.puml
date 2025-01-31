@@ -1,0 +1,56 @@
+@startuml
+
+' === ERD ===
+title Entity Relationship Diagram (ERD) Ipeng Sport
+
+entity Pelanggan {
+  *PelangganID (PK)
+  --
+  Nama
+  Email
+  NoTelepon
+  Alamat
+}
+
+entity Produk {
+  *ProdukID (PK)
+  --
+  NamaProduk
+  Kategori
+  Harga
+  Stok
+}
+
+entity Transaksi {
+  *TransaksiID (PK)
+  --
+  *PelangganID (FK)
+  *ProdukID (FK)
+  Jumlah
+  TanggalTransaksi
+}
+
+entity Inventaris {
+  *InventarisID (PK)
+  --
+  *ProdukID (FK)
+  StokMasuk
+  StokKeluar
+  TanggalUpdate
+}
+
+entity Pengiriman {
+  *PengirimanID (PK)
+  --
+  *TransaksiID (FK)
+  Kurir
+  Status
+  TanggalKirim
+}
+
+Pelanggan ||--o{ Transaksi : "Melakukan"
+Produk ||--o{ Transaksi : "Termasuk dalam"
+Produk ||--o{ Inventaris : "Memiliki"
+Transaksi ||--o{ Pengiriman : "Memiliki"
+
+@enduml
